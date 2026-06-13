@@ -5,120 +5,194 @@ from pathlib import Path
 
 # --- CONFIGURATION ---
 README_PATH = Path("README.md")
-START_MARKER = "<!-- Start Table -->"
-END_MARKER = "<!-- End Table -->"
+START_MARKER = "<!-- start table -->"
+END_MARKER = "<!-- end table -->"
 
-# Directories at the root level to completely ignore
-IGNORE_DIRS = {".git", ".github", ".vscode", "node_modules", "assets"}
+# 1. Global Ignore List: Any directory or file matching these names will be skipped completely, anywhere they appear
+GLOBAL_IGNORE = {
+    ".git", ".github", ".vscode", "bin", "obj", ".pytest_cache"
+}
 
-# Prettify language folder names for headings
+# Language mapping for clean UI display
 LANGUAGE_MAPPING = {
-    "c": "C",
-    "cpp": "C++",
     "csharp": "C#",
-    "javascript": "JavaScript",
     "python": "Python",
+    "javascript": "JavaScript",
     "typescript": "TypeScript",
+    "cpp": "C++",
+    "dsa-csharp": "DSA in C#",
+    "c": "C"
+}
+
+# 2. Dynamic Platform Configuration Object
+# Controls: Display Label, Folder Scan Depth (3 or 4), and Category/Difficulty sorting priority
+PLATFORM_CONFIG = {
+    "leetcode": {
+        "display_name": "LeetCode",
+        "levels": 3,  # Structure: website/lang/solution
+        "sort_key": lambda cat: cat  # Simple alphabetical fallback
+    },
+    "hackerrank": {
+        "display_name": "HackerRank",
+        "levels": 3,  # Structure: website/lang/solution
+        "sort_key": lambda cat: cat  # Simple alphabetical fallback
+    },
+    "neetcode": {
+        "display_name": "NeetCode",
+        "levels": 3,  # Structure: website/lang/solution
+        "sort_key": lambda cat: cat  # Simple alphabetical fallback
+    },
+    "codewars": {
+        "display_name": "Codewars",
+        "levels": 4,  # Structure: website/lang/difficulty/solution
+        "sort_key": lambda cat: int(re.search(r'\d+', cat).group()) if re.search(r'\d+', cat) else 99  # kyu1 before kyu8
+    }
 }
 
 
-def extract_kyu_number(diff_str):
-    """Extracts the number from kyu strings (e.g., 'kyu8' -> 8) for sorting."""
-    match = re.search(r"\d+", diff_str)
-    return int(match.group()) if match else 0
+def should_ignore(path: Path) -> bool:
+    """Checks if a path contains any globally ignored folder or file segments."""
+    return any(part in GLOBAL_IGNORE for part in path.parts)
 
 
 def get_solutions_data():
-    """Scans the repository and builds a structured dictionary of solutions."""
+    """Scans the repository and dynamically adjusts parsing depth based on PLATFORM_CONFIG."""
     solutions = {}
     root = Path(".")
 
-    # 1. Scan Languages
-    for lang_dir in root.iterdir():
-        if lang_dir.is_dir() and lang_dir.name not in IGNORE_DIRS:
-            lang_name = lang_dir.name
+    # Level 1: Loop through potential Website/Platform directories at root
+    for platform_dir in root.iterdir():
+        if not platform_dir.is_dir() or should_ignore(platform_dir):
+            continue
 
-            # 2. Scan Difficulty Levels (e.g., kyu1, kyu8)
-            for diff_dir in lang_dir.iterdir():
-                if diff_dir.is_dir() and diff_dir.name.startswith("kyu"):
-                    diff_name = diff_dir.name
+        platform_key = platform_dir.name.lower()
+        if platform_key not in PLATFORM_CONFIG:
+            continue  # Skip directories not explicitly defined in our platform config
 
-                    # 3. Scan Individual Problems
-                    for prob_dir in diff_dir.iterdir():
-                        if prob_dir.is_dir():
-                            prob_name = prob_dir.name
+        config = PLATFORM_CONFIG[platform_key]
+        platform_name = config["display_name"]
 
-                            # Convert snake_case or kebab-case to Title Case
-                            prob_title = (
-                                prob_name.replace("_", " ").replace("-", " ").title()
-                            )
+        if platform_name not in solutions:
+            solutions[platform_name] = {}
 
-                            # Generate relative path for Markdown linking
-                            rel_path = f"./{lang_name}/{diff_name}/{prob_name}/"
+        # Level 2: Loop through Programming Languages
+        for lang_dir in platform_dir.iterdir():
+            if not lang_dir.is_dir() or should_ignore(lang_dir):
+                continue
 
-                            # Initialize map structures safely
-                            if lang_name not in solutions:
-                                solutions[lang_name] = {}
-                            if diff_name not in solutions[lang_name]:
-                                solutions[lang_name][diff_name] = []
+            lang_key = lang_dir.name.lower()
+            lang_name = LANGUAGE_MAPPING.get(lang_key, lang_dir.name.title())
 
-                            solutions[lang_name][diff_name].append(
-                                {"title": prob_title, "path": rel_path}
-                            )
+            if lang_name not in solutions[platform_name]:
+                solutions[platform_name][lang_name] = {}
+
+            # Parse depending on the specified depth level strategy
+            if config["levels"] == 4:
+                # Level 3: Difficulty / Category Folder
+                for cat_dir in lang_dir.iterdir():
+                    if not cat_dir.is_dir() or should_ignore(cat_dir):
+                        continue
+
+                    cat_name = cat_dir.name
+                    if cat_name not in solutions[platform_name][lang_name]:
+                        solutions[platform_name][lang_name][cat_name] = []
+
+                    # Level 4: Actual Solutions
+                    for prob_dir in cat_dir.iterdir():
+                        if not prob_dir.is_dir() or should_ignore(prob_dir):
+                            continue
+
+                        add_problem(solutions[platform_name][lang_name][cat_name], prob_dir)
+
+            elif config["levels"] == 3:
+                # Level 3: Direct Solutions (Flat category used as a placeholder key)
+                cat_name = "All Solutions"
+                if cat_name not in solutions[platform_name][lang_name]:
+                    solutions[platform_name][lang_name][cat_name] = []
+
+                for prob_dir in lang_dir.iterdir():
+                    if not prob_dir.is_dir() or should_ignore(prob_dir):
+                        continue
+
+                    add_problem(solutions[platform_name][lang_name][cat_name], prob_dir)
+
     return solutions
 
 
+def add_problem(target_list, prob_dir: Path):
+    """Formats and appends solution metadata to the tracking array."""
+    prob_title = prob_dir.name.replace("_", " ").replace("-", " ").title()
+    # Normalize clean paths for markdown links (e.g., ./leetcode/csharp/q485_max...)
+    rel_path = f"./{'/'.join(prob_dir.parts)}/"
+
+    target_list.append({
+        "title": prob_title,
+        "path": rel_path
+    })
+
+
 def build_markdown_tables(solutions):
-    """Generates the Markdown string containing sections and tables."""
+    """Generates complete Markdown dynamically altering heading levels depending on configured structure rules."""
     markdown_lines = []
 
-    # Sort languages alphabetically
-    for lang in sorted(solutions.keys()):
-        lang_title = LANGUAGE_MAPPING.get(lang.lower(), lang.title())
-        markdown_lines.append(f"### {lang_title}\n")
+    # Sort Website/Platforms alphabetically
+    for platform in sorted(solutions.keys()):
+        markdown_lines.append(f"## {platform}\n")  # Platform Header (H2)
+        platform_key = platform.lower()
+        config = PLATFORM_CONFIG[platform_key]
 
-        # CHANGED HERE: Removed reverse=True so lower numbers (kyu1) come first
-        sorted_diffs = sorted(solutions[lang].keys(), key=extract_kyu_number)
+        # Sort Languages alphabetically
+        for lang in sorted(solutions[platform].keys()):
+            markdown_lines.append(f"### {lang}\n")  # Language Header (H3)
 
-        for diff in sorted_diffs:
-            markdown_lines.append(f"#### {diff}\n")
-            markdown_lines.append("| Problem | Level | Solution |")
-            markdown_lines.append("| :--- | :---: | :--- |")
+            # Sort categories according to custom sorting logic rule configured in platform settings
+            categories = sorted(solutions[platform][lang].keys(), key=config["sort_key"])
 
-            # Sort individual problems alphabetically by title
-            sorted_probs = sorted(solutions[lang][diff], key=lambda x: x["title"])
-            for prob in sorted_probs:
-                markdown_lines.append(
-                    f"| {prob['title']} | {diff} | [Solution]({prob['path']}) |"
-                )
+            for cat in categories:
+                problems = solutions[platform][lang][cat]
+                if not problems:
+                    continue
 
-            markdown_lines.append("")  # Empty line spacing between tables
+                # Heading adjustments: Only output Category sub-headers (H4) if it's a true 4-level layout
+                if config["levels"] == 4:
+                    markdown_lines.append(f"#### {cat}\n")
+                    markdown_lines.append("| Problem | Level | Solution |")
+                    markdown_lines.append("| :--- | :---: | :--- |")
+
+                    sorted_probs = sorted(problems, key=lambda x: x["title"])
+                    for prob in sorted_probs:
+                        markdown_lines.append(f"| {prob['title']} | {cat} | [Solution]({prob['path']}) |")
+                else:
+                    # 3-level flat table layout
+                    markdown_lines.append("| Problem | Solution |")
+                    markdown_lines.append("| :--- | :--- |")
+
+                    sorted_probs = sorted(problems, key=lambda x: x["title"])
+                    for prob in sorted_probs:
+                        markdown_lines.append(f"| {prob['title']} | [Solution]({prob['path']}) |")
+
+                markdown_lines.append("")  # Spacing between tables
 
     return "\n".join(markdown_lines).strip()
 
 
 def update_readme(new_markdown):
-    """Injects the generated markdown between the designated markers in README.md."""
+    """Injects generated layout content inside README.md target tags safely."""
     if not README_PATH.exists():
-        default_structure = (
-            f"# Code Solutions\n\n## Solutions\n\n{START_MARKER}\n{END_MARKER}\n"
-        )
+        default_structure = f"# Monorepo Code Solutions\n\n{START_MARKER}\n{END_MARKER}\n"
         README_PATH.write_text(default_structure, encoding="utf-8")
 
     content = README_PATH.read_text(encoding="utf-8")
-
-    pattern = re.compile(
-        f"{re.escape(START_MARKER)}.*{re.escape(END_MARKER)}", re.DOTALL
-    )
+    pattern = re.compile(f"{re.escape(START_MARKER)}.*{re.escape(END_MARKER)}", re.DOTALL)
     replacement = f"{START_MARKER}\n\n{new_markdown}\n\n{END_MARKER}"
 
     if START_MARKER in content and END_MARKER in content:
         updated_content = pattern.sub(replacement, content)
     else:
-        updated_content = f"{content}\n\n## Solutions\n{replacement}"
+        updated_content = f"{content}\n\n## Solutions Matrix\n{replacement}"
 
     README_PATH.write_text(updated_content, encoding="utf-8")
-    print("README.md indexing system successfully updated!")
+    print("README.md indexed successfully!")
 
 
 if __name__ == "__main__":
