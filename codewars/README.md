@@ -34,8 +34,8 @@
 
 | Problem | Level | Solution |
 | :--- | :---: | :--- |
-| Squareeverydigit | kyu7 | [Solution](./csharp/kyu7/SquareEveryDigit/) |
-| Vowelcount | kyu7 | [Solution](./csharp/kyu7/VowelCount/) |
+| Square Every Digit | kyu7 | [Solution](./csharp/kyu7/square_every_digit/) |
+| Vowel Count | kyu7 | [Solution](./csharp/kyu7/vowel_count/) |
 
 #### kyu8
 
@@ -85,7 +85,6 @@
 
 | Problem | Level | Solution |
 | :--- | :---: | :--- |
-|   Pycache   | kyu8 | [Solution](./python/kyu8/__pycache__/) |
 | Even Or Odd | kyu8 | [Solution](./python/kyu8/even_or_odd/) |
 
 ### Sql
