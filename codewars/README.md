@@ -30,6 +30,22 @@
 
 ### C#
 
+#### kyu5
+
+| Problem | Level | Solution |
+| :--- | :---: | :--- |
+| Find The Unique String | kyu5 | [Solution](./csharp/kyu5/find_the_unique_string/) |
+| Human Readable Time | kyu5 | [Solution](./csharp/kyu5/human_readable_time/) |
+| Moving Zeroes To The End | kyu5 | [Solution](./csharp/kyu5/moving_zeroes_to_the_end/) |
+
+#### kyu6
+
+| Problem | Level | Solution |
+| :--- | :---: | :--- |
+| Converting String To Camel Case | kyu6 | [Solution](./csharp/kyu6/converting_string_to_camel_case/) |
+| Find The Unique Number | kyu6 | [Solution](./csharp/kyu6/find_the_unique_number/) |
+| Split String | kyu6 | [Solution](./csharp/kyu6/split_string/) |
+
 #### kyu7
 
 | Problem | Level | Solution |
@@ -87,7 +103,7 @@
 | :--- | :---: | :--- |
 | Even Or Odd | kyu8 | [Solution](./python/kyu8/even_or_odd/) |
 
-### Sql
+### SQL
 
 #### kyu8
 
