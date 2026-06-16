@@ -16,9 +16,8 @@ LANGUAGE_MAPPING = {
     "c": "C",
     "cpp": "C++",
     "csharp": "C#",
-    "javascript": "JavaScript",
+    "sql": "SQL",
     "python": "Python",
-    "typescript": "TypeScript",
 }
 
 
