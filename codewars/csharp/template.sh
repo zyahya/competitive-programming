@@ -37,7 +37,10 @@ namespace Codewars.Solutions.${LEVEL}.${PROBLEM_NAME};
 
 public class ${CLASS_NAME}
 {
+    public static void Solution()
+    {
 
+    }
 }
 EOF
 
@@ -50,7 +53,9 @@ public class ${CLASS_NAME}Tests
     [Fact]
     public void Test1()
     {
+        // var result = ${CLASS_NAME}.Solution();
 
+        // Assert.Equal();
     }
 }
 EOF
