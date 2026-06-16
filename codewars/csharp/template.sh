@@ -42,13 +42,13 @@ public class ${CLASS_NAME}
 EOF
 
 # Generate the Test Boilerplate
-cat > "$TARGET_DIR/${PROBLEM_NAME}Tests.cs" <<EOF
+cat > "$TARGET_DIR/${PROBLEM_NAME}_tests.cs" <<EOF
 namespace Codewars.Solutions.${LEVEL}.${PROBLEM_NAME};
 
 public class ${CLASS_NAME}Tests
 {
     [Fact]
-    public void ${CLASS_NAME}()
+    public void Test1()
     {
 
     }
