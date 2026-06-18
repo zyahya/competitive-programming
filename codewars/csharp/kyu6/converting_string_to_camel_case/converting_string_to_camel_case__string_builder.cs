@@ -10,13 +10,10 @@ public class ConvertingStringToCamelCase_StringBuilder
 
         for (int i = 0; i < sb.Length - 1; i++)
         {
-            char currentChar = sb[i];
-            char nextChat = sb[i + 1];
-
-            if (currentChar == '-' || currentChar == '_')
+            if (sb[i] == '-' || sb[i + 1] == '_')
             {
                 sb.Remove(i, 2);
-                sb.Insert(i, char.ToUpper(nextChat));
+                sb.Insert(i, char.ToUpper(sb[i + 1]));
             }
         }
 
