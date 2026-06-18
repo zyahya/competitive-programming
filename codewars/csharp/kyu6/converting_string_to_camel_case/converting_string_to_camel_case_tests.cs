@@ -6,7 +6,7 @@ public class ConvertingStringToCamelCaseTests
     [InlineData("the-stealth-warrior", "theStealthWarrior")]
     [InlineData("The_Stealth_Warrior", "TheStealthWarrior")]
     [InlineData("The_Stealth-Warrior", "TheStealthWarrior")]
-    public void Test1(string input, string output)
+    public void StringBuilder(string input, string output)
     {
         var result = ConvertingStringToCamelCase_StringBuilder.Solution(input);
 

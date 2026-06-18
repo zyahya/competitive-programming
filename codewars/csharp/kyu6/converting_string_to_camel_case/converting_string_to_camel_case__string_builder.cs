@@ -10,10 +10,9 @@ public class ConvertingStringToCamelCase_StringBuilder
 
         for (int i = 0; i < sb.Length - 1; i++)
         {
-            if (sb[i] == '-' || sb[i + 1] == '_')
+            if (sb[i] == '-' || sb[i] == '_')
             {
-                sb.Remove(i, 2);
-                sb.Insert(i, char.ToUpper(sb[i + 1]));
+                sb.Replace($"{sb[i]}{sb[i + 1]}", $"{char.ToUpper(sb[i + 1])}");
             }
         }
 
