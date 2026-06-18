@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler.q1_multiples_of_3_and_5;
+﻿namespace ProjectEuler.multiples_of_3_and_5;
 
 public class MultiplesOf3And5_Tests
 {
