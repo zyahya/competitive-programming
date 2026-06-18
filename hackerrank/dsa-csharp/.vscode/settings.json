@@ -1,6 +1,4 @@
 {
-    "dotnet.defaultSolution": "HackerRank.slnx",
-
     "files.exclude": {
         "**/bin": true,
         "**/obj": true

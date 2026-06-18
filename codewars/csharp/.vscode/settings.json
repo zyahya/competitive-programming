@@ -1,6 +1,4 @@
 {
-  "dotnet.defaultSolution": "Codewars.slnx",
-
   "files.exclude": {
     "**/bin": true,
     "**/obj": true
