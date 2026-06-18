@@ -69,6 +69,10 @@ if [ -n "$TEST_FILE" ]; then
     git add "$TEST_FILE"
 fi
 
+if [ -n "$README" ]; then
+    git add "$README"
+fi
+
 case "$OPERATION" in
     n)
         COMMIT_MSG="solve '$PROBLEM_DISPLAY' using $TECHNIQUE_DISPLAY"
