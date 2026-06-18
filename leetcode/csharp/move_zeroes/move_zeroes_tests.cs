@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.q283_move_zeroes;
+namespace LeetCode.Solutions.move_zeroes;
 
 public class Q283_MoveZeroesTests
 {

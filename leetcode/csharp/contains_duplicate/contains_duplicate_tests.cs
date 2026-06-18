@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.q217_contains_duplicate;
+namespace LeetCode.Solutions.contains_duplicate;
 
 public class Q217_ContainsDuplicateTests
 {

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LeetCode.Solutions.q389_find_the_difference;
+namespace LeetCode.Solutions.find_the_difference;
 
 public class FindTheDifference_Sorting
 {

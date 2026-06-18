@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Solutions.q20_valid_parentheses;
+﻿namespace LeetCode.Solutions.valid_parentheses;
 
 public class ValidParentheses_Tests
 {

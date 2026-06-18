@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace LeetCode.Solutions.q125_valid_palindrome;
+namespace LeetCode.Solutions.valid_palindrome;
 
 public class Q125_ValidPalindrome_StringBuilder
 {

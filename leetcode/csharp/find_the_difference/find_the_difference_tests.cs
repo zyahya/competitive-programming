@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.q389_find_the_difference;
+namespace LeetCode.Solutions.find_the_difference;
 
 public class Q389_FindTheDifferenceTests
 {
