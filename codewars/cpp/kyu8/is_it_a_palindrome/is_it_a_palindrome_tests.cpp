@@ -1,4 +1,4 @@
-#include "../../doctest.h"
+#include <doctest.h>
 #include "./is_it_a_palindrome.cpp"
 
 TEST_CASE("8kyu/is_it_a_palindrome")

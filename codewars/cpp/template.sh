@@ -25,7 +25,7 @@ touch "$dir/${problem_name}.cpp"
 
 # Changed to EOF (no quotes) so $dir will expand
 cat > "$dir/${problem_name}_tests.cpp" <<EOF
-#include "../../doctest.h"
+#include <doctest.h>
 #include "./${problem_name}.cpp"
 
 TEST_CASE("$dir")

@@ -1,4 +1,4 @@
-#include "../../doctest.h"
+#include <doctest.h>
 #include "multiply.cpp"
 
 TEST_CASE("multiply test cases")

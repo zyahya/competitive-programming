@@ -1,4 +1,4 @@
-#include "../../doctest.h"
+#include <doctest.h>
 #include "./alternating_case_bit.cpp"
 #include "./alternating_case_std.cpp"
 
