@@ -1,10 +1,11 @@
 #!/bin/bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: ps <n|i|a> <file_path>"
-    echo "  n : New problem"
-    echo "  i : Improve existing solution"
-    echo "  a : Add another solution to existing problem"
+    echo "Usage: commit <new | opt | ref | alt> <file_path>"
+    echo "  new : New problem"
+    echo "  opt : Optimize existing solution"
+    echo "  ref : Refactor existing solution"
+    echo "  alt : Add another solution to existing problem"
     exit 1
 fi
 
@@ -74,13 +75,16 @@ if [ -n "$README" ]; then
 fi
 
 case "$OPERATION" in
-    n)
+    new)
         COMMIT_MSG="solve '$PROBLEM_DISPLAY' using $TECHNIQUE_DISPLAY"
         ;;
-    i)
+    opt)
         COMMIT_MSG="optimize '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
         ;;
-    a)
+    ref)
+        COMMIT_MSG="refactor '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
+        ;;
+    alt)
         COMMIT_MSG="add alternative $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
         ;;
     *)
