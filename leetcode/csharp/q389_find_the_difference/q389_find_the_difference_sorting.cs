@@ -2,7 +2,7 @@
 
 namespace LeetCode.Solutions.q389_find_the_difference;
 
-public class Q389_FindTheDifference
+public class FindTheDifference_Sorting
 {
     public static char Solution(string s, string t)
     {

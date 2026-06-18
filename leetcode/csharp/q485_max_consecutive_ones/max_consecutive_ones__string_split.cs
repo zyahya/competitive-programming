@@ -2,7 +2,7 @@
 
 namespace LeetCode.Solutions.q485_max_consecutive_ones;
 
-public class Q485_MaxConsecutiveOnes
+public class MaxConsecutiveOnes_StringSplit
 {
     public static int Solution(int[] nums)
     {

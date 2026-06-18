@@ -1,6 +1,6 @@
 namespace LeetCode.Solutions.q283_move_zeroes;
 
-public class Q283_MoveZeroes
+public class MoveZeroes_TwoPointers
 {
     public static int[] Solution(int[] nums)
     {

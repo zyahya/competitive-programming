@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Solutions.q485_max_consecutive_ones;
 
-public class Q485_MaxConsecutiveOnes_Optimized
+public class MaxConsecutiveOnes_LinearScan
 {
     public static int Solution(int[] nums)
     {

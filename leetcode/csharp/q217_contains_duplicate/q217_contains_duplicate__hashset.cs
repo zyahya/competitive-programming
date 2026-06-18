@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace LeetCode.Solutions.q217_contains_duplicate;
 
-public class Q217_ContainsDuplicate
+public class ContainsDuplicate_HashSet
 {
     public static bool Solution(int[] nums)
     {

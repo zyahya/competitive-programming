@@ -2,29 +2,12 @@
 
 namespace LeetCode.Solutions.q20_valid_parentheses;
 
-public class Q20_ValidParentheses
+public class ValidParentheses_Stack
 {
-    private Stack<char> stack = new();
-
-    private static bool IsEmpty(Stack<char> stack)
+    public static bool Solution(string parentheses)
     {
-        return stack.Count == 0;
-    }
+        Stack<char> stack = new();
 
-    private static bool IsCloseParenthesis(char parenthesis)
-    {
-        return parenthesis == ')' || parenthesis == ']' || parenthesis == '}';
-    }
-
-    private static bool ArePair(char open, char close)
-    {
-        return open == '(' && close == ')' ||
-                open == '[' && close == ']' ||
-                open == '{' && close == '}';
-    }
-
-    public bool Solution(string parentheses)
-    {
         for (int current = 0; current < parentheses.Length; current++)
         {
             if (IsEmpty(stack))
@@ -52,5 +35,22 @@ public class Q20_ValidParentheses
         }
 
         return IsEmpty(stack);
+    }
+
+    private static bool IsEmpty(Stack<char> stack)
+    {
+        return stack.Count == 0;
+    }
+
+    private static bool IsCloseParenthesis(char parenthesis)
+    {
+        return parenthesis == ')' || parenthesis == ']' || parenthesis == '}';
+    }
+
+    private static bool ArePair(char open, char close)
+    {
+        return open == '(' && close == ')' ||
+                open == '[' && close == ']' ||
+                open == '{' && close == '}';
     }
 }

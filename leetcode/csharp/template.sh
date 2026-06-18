@@ -37,7 +37,7 @@ EOF
 cat > "$TARGET_DIR/${PROBLEM_NAME}_tests.cs" <<EOF
 namespace LeetCode.Solutions.${PROBLEM_NAME};
 
-public class ${CLASS_NAME}Tests
+public class ${CLASS_NAME}_Tests
 {
     [Fact]
     public void ${CLASS_NAME}_Solution_1()
