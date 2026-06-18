@@ -1,6 +1,6 @@
 namespace Codewars.Solutions.kyu5.moving_zeroes_to_the_end;
 
-public class MovingZeroesToTheEnd_Simplified
+public class MovingZeroesToTheEnd__TwoPointers
 {
     public static int[] Solution(int[] arr)
     {
