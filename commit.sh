@@ -5,6 +5,7 @@ if [ "$#" -ne 2 ]; then
     echo "  new : New problem"
     echo "  opt : Optimize existing solution"
     echo "  ref : Refactor existing solution"
+    echo "  fix : Fix existing solution"
     echo "  alt : Add another solution to existing problem"
     exit 1
 fi
@@ -83,6 +84,9 @@ case "$OPERATION" in
         ;;
     ref)
         COMMIT_MSG="refactor '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
+        ;;
+    fix)
+        COMMIT_MSG="fix '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
         ;;
     alt)
         COMMIT_MSG="add alternative $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
