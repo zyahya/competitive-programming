@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: commit <new | opt | ref | alt> <file_path>"
+    echo "Usage: commit <new | opt | ref | fix | alt> <file_path>"
     echo "  new : New problem"
     echo "  opt : Optimize existing solution"
     echo "  ref : Refactor existing solution"
