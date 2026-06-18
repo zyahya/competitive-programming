@@ -13,7 +13,7 @@ public class FindTheUniqueNumber_Linq
         }
 
         int common = default;
-        int first = numbers.Skip(1).Take(1).First();
+        int first = numbers.First();
         int second = numbers.Skip(2).Take(1).First();
         int third = numbers.Skip(3).Take(1).First();
 
