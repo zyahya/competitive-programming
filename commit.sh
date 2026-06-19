@@ -6,7 +6,7 @@ if [ "$#" -ne 2 ]; then
     echo "  opt : Optimize existing solution"
     echo "  ref : Refactor existing solution"
     echo "  fix : Fix existing solution"
-    echo "  alt : Add another solution to existing problem"
+    echo "  alt : Add another solution to existing problem, only if technique specified"
     exit 1
 fi
 
@@ -32,8 +32,9 @@ if [[ "$BASE_NAME" == *__* ]]; then
     PROBLEM_DISPLAY=$(echo "$PROBLEM_NAME" | tr '_' ' ')
     TECHNIQUE_DISPLAY=$(echo "$TECHNIQUE" | tr '_' ' ')
 else
-    echo "Error: File name must follow the pattern 'problem_name__technique.extension'"
-    exit 1
+    TECHNIQUE_DISPLAY=""
+    PROBLEM_NAME="${BASE_NAME%.*}"
+    PROBLEM_DISPLAY=$(echo "$PROBLEM_NAME" | tr '_' ' ')
 fi
 
 case "$EXTENSION" in
@@ -75,26 +76,48 @@ if [ -n "$README" ]; then
     git add "$README"
 fi
 
-case "$OPERATION" in
-    new)
-        COMMIT_MSG="solve '$PROBLEM_DISPLAY' using $TECHNIQUE_DISPLAY"
-        ;;
-    opt)
-        COMMIT_MSG="optimize '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
-        ;;
-    ref)
-        COMMIT_MSG="refactor '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
-        ;;
-    fix)
-        COMMIT_MSG="fix '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
-        ;;
-    alt)
-        COMMIT_MSG="add alternative $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
-        ;;
-    *)
-        echo "Error: Invalid operation '$OPERATION'."
-        exit 1
-        ;;
-esac
+if [[ -z "$TECHNIQUE_DISPLAY" ]]; then
+    case "$OPERATION" in
+        new)
+            COMMIT_MSG="solve '$PROBLEM_DISPLAY'"
+            ;;
+        opt)
+            COMMIT_MSG="optimize '$PROBLEM_DISPLAY'"
+            ;;
+        ref)
+            COMMIT_MSG="refactor '$PROBLEM_DISPLAY'"
+            ;;
+        fix)
+            COMMIT_MSG="fix '$PROBLEM_DISPLAY'"
+            ;;
+        *)
+            echo "Error: Invalid operation '$OPERATION'."
+            exit 1
+            ;;
+    esac
+else
+    case "$OPERATION" in
+        new)
+            COMMIT_MSG="solve '$PROBLEM_DISPLAY' using $TECHNIQUE_DISPLAY"
+            ;;
+        opt)
+            COMMIT_MSG="optimize '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
+            ;;
+        ref)
+            COMMIT_MSG="refactor '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
+            ;;
+        fix)
+            COMMIT_MSG="fix '$PROBLEM_DISPLAY' ($TECHNIQUE_DISPLAY solution)"
+            ;;
+        alt)
+            COMMIT_MSG="add alternative $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
+            ;;
+        *)
+            echo "Error: Invalid operation '$OPERATION'."
+            exit 1
+            ;;
+    esac
+fi
+
 
 git commit -m "${COMMIT_MSG} in ${LANG_NAME}"
