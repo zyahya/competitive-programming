@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace Codewars.Solutions.kyu8.total_amount_of_points;
 
 public class TotalAmountOfPoints
@@ -11,13 +8,11 @@ public class TotalAmountOfPoints
 
         foreach (string match in games)
         {
-            byte[] matchResult = match.Split(':').Select(x => Convert.ToByte(x)).ToArray();
-
-            if (matchResult[0] > matchResult[1])
+            if (match[0] > match[2])
             {
                 totalPoints += 3;
             }
-            else if (matchResult[0] == matchResult[1])
+            else if (match[0] == match[2])
             {
                 totalPoints += 1;
             }
