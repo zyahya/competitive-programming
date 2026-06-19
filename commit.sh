@@ -6,7 +6,7 @@ if [ "$#" -ne 2 ]; then
     echo "  opt : Optimize existing solution"
     echo "  ref : Refactor existing solution"
     echo "  fix : Fix existing solution"
-    echo "  alt : Add another solution to existing problem, only if technique specified"
+    echo "  alt : Add another solution to existing problem, only if the solution has a technique"
     exit 1
 fi
 
