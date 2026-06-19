@@ -7,6 +7,7 @@ if [ "$#" -ne 2 ]; then
     echo "  ref : Refactor existing solution"
     echo "  fix : Fix existing solution"
     echo "  alt : Add another solution to existing problem, only if the solution has a technique"
+    echo "  doc : Update readme file"
     exit 1
 fi
 
@@ -90,6 +91,9 @@ if [[ -z "$TECHNIQUE_DISPLAY" ]]; then
         fix)
             COMMIT_MSG="fix '$PROBLEM_DISPLAY'"
             ;;
+        doc)
+            COMMIT_MSG="update README of '$PROBLEM_DISPLAY'"
+            ;;
         *)
             echo "Error: Invalid operation '$OPERATION'."
             exit 1
@@ -111,6 +115,9 @@ else
             ;;
         alt)
             COMMIT_MSG="add alternative $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
+            ;;
+        doc)
+            COMMIT_MSG="update README of $TECHNIQUE_DISPLAY solution for '$PROBLEM_DISPLAY'"
             ;;
         *)
             echo "Error: Invalid operation '$OPERATION'."
