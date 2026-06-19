@@ -6,7 +6,7 @@ public class PriceOfMangoes
 {
     public static int Solution(int quantity, int price)
     {
-        var freeMangoes = Math.Floor((double)quantity / 3);
+        double freeMangoes = Math.Floor((double)quantity / 3);
 
         return (quantity - (int)freeMangoes) * price;
     }

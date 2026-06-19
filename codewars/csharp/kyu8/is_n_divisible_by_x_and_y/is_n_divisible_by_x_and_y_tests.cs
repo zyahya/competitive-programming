@@ -9,7 +9,7 @@ public class IsNDivisibleByXAndYTests
     [InlineData(12, 7, 5, false)]
     public void Should_Check_Divisibility_By_X_And_Y(int n, int x, int y, bool expected)
     {
-        var result = IsNDivisibleByXAndY.Solution(n, x, y);
+        bool result = IsNDivisibleByXAndY.Solution(n, x, y);
 
         Assert.Equal(expected, result);
     }

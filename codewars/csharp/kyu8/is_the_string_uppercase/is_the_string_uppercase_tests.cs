@@ -11,7 +11,7 @@ public class IsTheStringUppercaseTests
     [InlineData("ACSKLDFJSGSKLDFJSKLDFJ", true)]
     public void Test1(string input, bool expectedResult)
     {
-        var result = IsTheStringUppercase.Solution(input);
+        bool result = IsTheStringUppercase.Solution(input);
 
         Assert.Equal(expectedResult, result);
     }

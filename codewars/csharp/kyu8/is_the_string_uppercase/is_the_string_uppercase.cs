@@ -9,7 +9,7 @@ public static class IsTheStringUppercase
             return false;
         }
 
-        foreach (var c in text)
+        foreach (char c in text)
         {
             if (c == ' ')
             {

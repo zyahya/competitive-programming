@@ -7,7 +7,7 @@ public class MaxConsecutiveOnes_LinearScan
         int max = 0;
         int count = 0;
 
-        foreach (var n in nums)
+        foreach (int n in nums)
         {
             if (n == 1)
             {

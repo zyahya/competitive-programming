@@ -9,7 +9,7 @@ public class AllStartCodeChallenge18Tests
     [InlineData("abcabcabc", 'a', 3)]
     public void Test1(string text, char c, int expected)
     {
-        var result = AllStartCodeChallenge18.Solution(text, c);
+        int result = AllStartCodeChallenge18.Solution(text, c);
         Assert.Equal(expected, result);
     }
 }

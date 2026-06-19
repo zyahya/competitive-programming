@@ -10,7 +10,7 @@ public class GrasshopperGradeBookTests
     [InlineData(32, 15, 21, 'F')]
     public void Test1(int s1, int s2, int s3, char output)
     {
-        var result = GrasshopperGradeBook.Solution(s1, s2, s3);
+        char result = GrasshopperGradeBook.Solution(s1, s2, s3);
 
         Assert.Equal(output, result);
     }

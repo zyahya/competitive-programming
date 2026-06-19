@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace Codewars.Solutions.kyu6.split_string;
 
 public class SplitString_Optimized

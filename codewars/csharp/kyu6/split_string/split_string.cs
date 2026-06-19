@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Codewars.Solutions.kyu6.split_string;
@@ -7,7 +6,7 @@ public class SplitString
 {
     public static string[] Solution(string str)
     {
-        var pointer = 0;
+        int pointer = 0;
         string[] output = [];
 
         while (pointer < str.Length)

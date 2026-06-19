@@ -7,7 +7,7 @@ public class ValidParentheses_Tests
     [InlineData("[()]}", false)]
     public void Test(string input, bool output)
     {
-        var result = ValidParentheses_Stack.Solution(input);
+        bool result = ValidParentheses_Stack.Solution(input);
 
         Assert.Equal(output, result);
     }

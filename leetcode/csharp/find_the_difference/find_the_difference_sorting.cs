@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode.Solutions.find_the_difference;
 
@@ -11,13 +12,13 @@ public class FindTheDifference_Sorting
             return t[0];
         }
 
-        var sortedS = s.ToList();
+        List<char> sortedS = s.ToList();
         sortedS.Sort();
 
-        var sortedT = t.ToList();
+        List<char> sortedT = t.ToList();
         sortedT.Sort();
 
-        for (var i = 0; i < s.Length; i++)
+        for (int i = 0; i < s.Length; i++)
         {
             if (sortedT[i] != sortedS[i])
             {

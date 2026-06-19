@@ -9,7 +9,7 @@ public class FindTheUniqueNumberTests
     [InlineData(new int[] { 11, 11, 14, 11, 11 }, 14)]
     public void Linq(int[] input, int output)
     {
-        var result = FindTheUniqueNumber_Linq.Solution(input);
+        int result = FindTheUniqueNumber_Linq.Solution(input);
 
         Assert.Equal(output, result);
     }

@@ -6,7 +6,7 @@ public class MaxConsecutiveOnes_StringSplit
 {
     public static int Solution(int[] nums)
     {
-        var binaryString = string.Concat(nums);
+        string binaryString = string.Concat(nums);
         return binaryString.Split("0").Max(i => i.Length);
     }
 }

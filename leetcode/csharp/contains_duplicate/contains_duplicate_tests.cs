@@ -8,7 +8,7 @@ public class Q217_ContainsDuplicateTests
     [InlineData(new int[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 }, true)]
     public void Q217_ContainsDuplicate_Solution_1(int[] input, bool expectedResult)
     {
-        var result = ContainsDuplicate_HashSet.Solution(input);
+        bool result = ContainsDuplicate_HashSet.Solution(input);
 
         Assert.Equal(expectedResult, result);
     }

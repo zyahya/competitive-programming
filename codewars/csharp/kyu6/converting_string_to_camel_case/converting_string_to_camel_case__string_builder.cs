@@ -6,7 +6,7 @@ public class ConvertingStringToCamelCase_StringBuilder
 {
     public static string Solution(string str)
     {
-        var sb = new StringBuilder(str);
+        StringBuilder sb = new(str);
 
         for (int i = 0; i < sb.Length - 1; i++)
         {

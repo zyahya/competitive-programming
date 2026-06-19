@@ -8,7 +8,7 @@ public class MultiplesOf3And5_Tests
     [InlineData(100, 2318)]
     public void Test1(int input, int expectedResult)
     {
-        var result = MultiplesOf3And5_BruteForce.Solution(input);
+        int result = MultiplesOf3And5_BruteForce.Solution(input);
 
         Assert.Equal(expectedResult, result);
     }

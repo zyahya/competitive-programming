@@ -11,7 +11,7 @@ public class Q125_ValidPalindromeTests
     [InlineData("a", true)]
     public void StringBuilder(string input, bool expectedResult)
     {
-        var result = Q125_ValidPalindrome_StringBuilder.Solution(input);
+        bool result = Q125_ValidPalindrome_StringBuilder.Solution(input);
 
         Assert.Equal(expectedResult, result);
     }
@@ -25,7 +25,7 @@ public class Q125_ValidPalindromeTests
     [InlineData("a", true)]
     public void SkipNonAlphabetical(string input, bool expectedResult)
     {
-        var result = Q125_ValidPalindrome_SkipNonAlphabetical.Solution(input);
+        bool result = Q125_ValidPalindrome_SkipNonAlphabetical.Solution(input);
 
         Assert.Equal(expectedResult, result);
     }

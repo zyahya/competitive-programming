@@ -8,7 +8,7 @@ public class ConvertingStringToCamelCaseTests
     [InlineData("The_Stealth-Warrior", "TheStealthWarrior")]
     public void StringBuilder(string input, string output)
     {
-        var result = ConvertingStringToCamelCase_StringBuilder.Solution(input);
+        string result = ConvertingStringToCamelCase_StringBuilder.Solution(input);
 
         Assert.Equal(output, result);
     }

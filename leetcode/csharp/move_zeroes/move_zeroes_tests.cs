@@ -7,7 +7,7 @@ public class Q283_MoveZeroesTests
     [InlineData(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }, new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 })]
     public void Test_Default_Solution(int[] input, int[] output)
     {
-        var result = MoveZeroes_TwoPointers.Solution(input);
+        int[] result = MoveZeroes_TwoPointers.Solution(input);
 
         Assert.Equal(output, result);
     }

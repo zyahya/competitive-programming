@@ -9,7 +9,7 @@ public class MaxConsecutiveOnesTests
     [InlineData(new int[] { 1, 0, 1, 1, 0, 1 }, 2)]
     public void Test1(int[] input, int expectedCount)
     {
-        var result = MaxConsecutiveOnes_StringSplit.Solution(input);
+        int result = MaxConsecutiveOnes_StringSplit.Solution(input);
 
         Assert.Equal(expectedCount, result);
     }
@@ -19,7 +19,7 @@ public class MaxConsecutiveOnesTests
     [InlineData(new int[] { 1, 0, 1, 1, 0, 1 }, 2)]
     public void Test2(int[] input, int expectedCount)
     {
-        var result = MaxConsecutiveOnes_LinearScan.Solution(input);
+        int result = MaxConsecutiveOnes_LinearScan.Solution(input);
 
         Assert.Equal(expectedCount, result);
     }

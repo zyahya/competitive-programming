@@ -7,7 +7,7 @@ public class MovingZeroesToTheEndTests
     [InlineData(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }, new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 })]
     public void TwoPointers(int[] input, int[] output)
     {
-        var result = MovingZeroesToTheEnd__TwoPointers.Solution(input);
+        int[] result = MovingZeroesToTheEnd__TwoPointers.Solution(input);
 
         Assert.Equal(output, result);
     }
