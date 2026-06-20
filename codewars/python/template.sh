@@ -31,11 +31,10 @@ EOF
 
 cat > "$TARGET_DIR/${PROBLEM_NAME}_tests.py" <<EOF
 from .${PROBLEM_NAME} import solution
-import pytest
 
 
 def test_${PROBLEM_NAME}():
-    # assert solution() is
+    # assert solution() ==
 	pass
 EOF
 
