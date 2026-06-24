@@ -1,6 +1,6 @@
 namespace LeetCode.Solutions.contains_duplicate;
 
-public class Q217_ContainsDuplicateTests
+public class ContainsDuplicateTests
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 1 }, true)]
