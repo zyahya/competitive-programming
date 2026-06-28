@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Codewars.Solutions.kyu6.find_the_unique_number;
+namespace Codewars.Solutions.Kyu6.find_the_unique_number;
 
 public class FindTheUniqueNumber_Linq
 {

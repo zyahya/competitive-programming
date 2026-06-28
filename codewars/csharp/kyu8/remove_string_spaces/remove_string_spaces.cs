@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.remove_string_spaces;
+﻿namespace Codewars.Solutions.Kyu8.remove_string_spaces;
 
 public class RemoveStringSpaces
 {

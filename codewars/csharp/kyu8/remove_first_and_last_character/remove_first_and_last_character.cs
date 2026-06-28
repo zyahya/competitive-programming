@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.remove_first_and_last_character;
+﻿namespace Codewars.Solutions.Kyu8.remove_first_and_last_character;
 
 public class RemoveFirstAndLastCharacter
 {

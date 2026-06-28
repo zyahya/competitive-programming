@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu8.grasshopper_grade_book;
+namespace Codewars.Solutions.Kyu8.grasshopper_grade_book;
 
 public class GrasshopperGradeBook
 {

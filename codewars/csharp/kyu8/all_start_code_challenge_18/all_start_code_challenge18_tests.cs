@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.all_start_code_challenge_18;
+﻿namespace Codewars.Solutions.Kyu8.all_start_code_challenge_18;
 
 public class AllStartCodeChallenge18Tests
 {

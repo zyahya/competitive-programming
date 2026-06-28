@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu8.remove_exclamation_marks;
+namespace Codewars.Solutions.Kyu8.remove_exclamation_marks;
 
 public class RemoveExclamationMarks
 {

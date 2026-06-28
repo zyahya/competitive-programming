@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Codewars.Solutions.kyu8.find_the_smallest_int;
+namespace Codewars.Solutions.Kyu8.find_the_smallest_int;
 
 public class FindTheSmallestInt
 {

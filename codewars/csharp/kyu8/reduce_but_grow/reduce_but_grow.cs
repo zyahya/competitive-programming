@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Codewars.Solutions.kyu8.reduce_but_grow;
+namespace Codewars.Solutions.Kyu8.reduce_but_grow;
 
 public class ReduceButGrow
 {

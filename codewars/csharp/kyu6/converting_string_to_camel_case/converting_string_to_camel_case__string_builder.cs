@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Codewars.Solutions.kyu6.converting_string_to_camel_case;
+namespace Codewars.Solutions.Kyu6.converting_string_to_camel_case;
 
 public class ConvertingStringToCamelCase_StringBuilder
 {

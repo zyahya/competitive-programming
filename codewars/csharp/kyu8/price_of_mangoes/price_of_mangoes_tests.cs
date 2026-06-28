@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.price_of_mangoes;
+﻿namespace Codewars.Solutions.Kyu8.price_of_mangoes;
 
 public class PriceOfMangoesTests
 {

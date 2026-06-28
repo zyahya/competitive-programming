@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.keep_hydrated;
+﻿namespace Codewars.Solutions.Kyu8.keep_hydrated;
 
 public class KeepHydrated
 {

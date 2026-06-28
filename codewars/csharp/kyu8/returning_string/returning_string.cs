@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.returning_string;
+﻿namespace Codewars.Solutions.Kyu8.returning_string;
 
 public class ReturningString
 {

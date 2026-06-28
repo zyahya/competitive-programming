@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.grasshopper_summation;
+﻿namespace Codewars.Solutions.Kyu8.grasshopper_summation;
 
 public class GrasshopperSummation
 {

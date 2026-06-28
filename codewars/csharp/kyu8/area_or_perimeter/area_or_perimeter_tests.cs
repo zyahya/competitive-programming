@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu8.area_or_perimeter;
+namespace Codewars.Solutions.Kyu8.area_or_perimeter;
 
 public class AreaOrPerimeterTests
 {

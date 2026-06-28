@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.convert_number_to_string;
+﻿namespace Codewars.Solutions.Kyu8.convert_number_to_string;
 
 public class ConvertNumberToString
 {

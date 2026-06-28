@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.is_the_string_uppercase;
+﻿namespace Codewars.Solutions.Kyu8.is_the_string_uppercase;
 
 public static class IsTheStringUppercase
 {

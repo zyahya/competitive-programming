@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Codewars.Solutions.kyu8.basic_mathematical_operation;
+namespace Codewars.Solutions.Kyu8.basic_mathematical_operation;
 
 public class BasicMathematicalOperation
 {

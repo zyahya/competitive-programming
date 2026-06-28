@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.convert_boolean_values;
+﻿namespace Codewars.Solutions.Kyu8.convert_boolean_values;
 
 public class ConvertBooleanValues
 {

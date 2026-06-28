@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Codewars.Solutions.kyu7.square_every_digit;
+namespace Codewars.Solutions.Kyu7.square_every_digit;
 
 public class SquareEveryDigit
 {

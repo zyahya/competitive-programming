@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu8.total_amount_of_points;
+namespace Codewars.Solutions.Kyu8.total_amount_of_points;
 
 public class TotalAmountOfPoints
 {

@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu7.vowel_count;
+﻿namespace Codewars.Solutions.Kyu7.vowel_count;
 
 public class VowelCount_Loop
 {

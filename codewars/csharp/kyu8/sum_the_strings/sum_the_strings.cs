@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.sum_the_strings;
+﻿namespace Codewars.Solutions.Kyu8.sum_the_strings;
 
 public class SumTheStrings
 {

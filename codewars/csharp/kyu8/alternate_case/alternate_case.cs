@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Codewars.Solutions.kyu8.alternate_case;
+namespace Codewars.Solutions.Kyu8.alternate_case;
 
 public static class AlternateCase
 {

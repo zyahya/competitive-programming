@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.kyu8.even_or_odd;
+﻿namespace Codewars.Solutions.Kyu8.even_or_odd;
 
 public class EvenOrOdd
 {

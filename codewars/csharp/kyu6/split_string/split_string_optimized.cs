@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu6.split_string;
+namespace Codewars.Solutions.Kyu6.split_string;
 
 public class SplitString_Optimized
 {
