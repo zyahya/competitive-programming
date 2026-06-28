@@ -1,0 +1,15 @@
+namespace Codewars.Solutions.Kyu6.ConvertingStringToCamelCase;
+
+public class ConvertingStringToCamelCaseTests
+{
+    [Theory]
+    [InlineData("the-stealth-warrior", "theStealthWarrior")]
+    [InlineData("The_Stealth_Warrior", "TheStealthWarrior")]
+    [InlineData("The_Stealth-Warrior", "TheStealthWarrior")]
+    public void StringBuilder(string input, string output)
+    {
+        string result = ConvertingStringToCamelCase_StringBuilder.Solution(input);
+
+        Assert.Equal(output, result);
+    }
+}

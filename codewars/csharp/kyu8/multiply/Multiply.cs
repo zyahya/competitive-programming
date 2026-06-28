@@ -1,4 +1,4 @@
-﻿namespace Codewars.Solutions.Kyu8.multiply;
+﻿namespace Codewars.Solutions.Kyu8.Multiply;
 
 public class Multiply
 {
