@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode.Solutions.find_the_difference;
+namespace LeetCode.Solutions.FindTheDifference;
 
 public class FindTheDifference_Sorting
 {

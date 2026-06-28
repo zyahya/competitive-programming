@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.binary_search;
+namespace LeetCode.Solutions.BinarySearch;
 
 public class Q704_BinarySearch
 {

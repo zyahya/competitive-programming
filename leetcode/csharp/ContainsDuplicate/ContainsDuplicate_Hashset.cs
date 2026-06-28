@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode.Solutions.contains_duplicate;
+namespace LeetCode.Solutions.ContainsDuplicate;
 
 public class ContainsDuplicate_HashSet
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Solutions.max_consecutive_ones;
+﻿namespace LeetCode.Solutions.MaxConsecutiveOnes;
 
 public class MaxConsecutiveOnes_LinearScan
 {

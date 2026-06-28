@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.move_zeroes;
+namespace LeetCode.Solutions.MoveZeroes;
 
 public class MoveZeroes_TwoPointers
 {

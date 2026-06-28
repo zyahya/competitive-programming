@@ -1,6 +1,4 @@
-﻿using LeetCode.Solutions.max_consecutive_ones;
-
-namespace LeetCode.Solutions.q485_max_consecutive_ones;
+﻿namespace LeetCode.Solutions.MaxConsecutiveOnes;
 
 public class MaxConsecutiveOnesTests
 {

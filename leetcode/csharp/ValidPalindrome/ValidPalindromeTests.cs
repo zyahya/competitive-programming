@@ -1,4 +1,4 @@
-namespace LeetCode.Solutions.valid_palindrome;
+namespace LeetCode.Solutions.ValidPalindrome;
 
 public class Q125_ValidPalindromeTests
 {
