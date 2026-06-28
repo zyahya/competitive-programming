@@ -8,9 +8,9 @@ public class SquareEveryDigit
 {
     public static int Solution(int n)
     {
-        return n.ConvertIntToIntList() // 523 => "523" => ['5', '2', '3'] => [5, 2, 3]
-            .PowerEachItem() // [5, 2, 3] => [25, 4, 9]
-            .ConcatIntList(); // [25, 4, 9] => "2549" => 2549
+        return n.ConvertIntToIntList()
+            .PowerEachItem()
+            .ConcatIntList();
     }
 }
 
