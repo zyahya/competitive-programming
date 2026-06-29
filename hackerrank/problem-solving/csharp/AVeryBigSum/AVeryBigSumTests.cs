@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HackerRank.Solutions.a_very_big_sum;
+namespace Hackerrank.Solutions.AVeryBigSum;
 
 public class AVeryBigSumTests
 {

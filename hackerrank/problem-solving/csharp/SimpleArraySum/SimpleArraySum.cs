@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HackerRank.Solutions.simple_array_sum;
+namespace Hackerrank.Solutions.SimpleArraySum;
 
 public class SimpleArraySum
 {

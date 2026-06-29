@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HackerRank.Solutions.two_dimensional_array;
+namespace Hackerrank.Solutions.TwoDimensionalArray;
 
 public class TwoDimensionalArray
 {

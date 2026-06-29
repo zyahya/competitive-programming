@@ -1,4 +1,4 @@
-namespace HackerRank.Solutions.camel_case;
+namespace Hackerrank.Solutions.CamelCase;
 
 public class CamelCaseTests
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HackerRank.Solutions.arrays_ds;
+namespace Hackerrank.Solutions.ArraysDs;
 
 public class ArraysDSTests
 {

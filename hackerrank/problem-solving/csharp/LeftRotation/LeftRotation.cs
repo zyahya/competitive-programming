@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HackerRank.Solutions.left_rotation;
+namespace Hackerrank.Solutions.LeftRotation;
 
 public class LeftRotation
 {
