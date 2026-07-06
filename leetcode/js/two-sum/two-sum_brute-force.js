@@ -1,4 +1,4 @@
-var twoSum = function (nums, target) {
+function twoSum(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = 1; j < nums.length; i++) {
       if (nums[i] + nums[j] == target) {
@@ -6,4 +6,4 @@ var twoSum = function (nums, target) {
       }
     }
   }
-};
+}
