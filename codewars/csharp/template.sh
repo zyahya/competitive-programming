@@ -55,7 +55,7 @@ public class ${CLASS_NAME}Tests
     {
         // var result = ${CLASS_NAME}.Solution();
 
-        // Assert.Equal();
+        // Assert.Equal(, result);
     }
 }
 EOF
