@@ -1,4 +1,4 @@
-namespace Codewars.Solutions.kyu5.moving_zeroes_to_the_end;
+namespace Codewars.Solutions.Kyu5.MovingZeroesToTheEnd;
 
 public class MovingZeroesToTheEndTests
 {
